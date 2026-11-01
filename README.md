@@ -135,4 +135,153 @@ feature-management-system/
 | Environments | Manage deployment environments |
 | Rollouts and Releases | Control feature rollout and release lifecycle |
 | Targeting Rules | Define feature access conditions |
-| Groups | Organize users
+| Groups | Organize users for targeted access |
+| Overrides | Apply custom feature availability settings |
+| Evaluation | Determine feature availability |
+| Analytics | Monitor feature-related information |
+| Audit Logs | Track management activities |
+| User Management | Manage users and their roles |
+
+## Installation and Setup
+
+### Prerequisites
+
+- Python 3.11 or a compatible Python version
+- Node.js and npm
+- PostgreSQL
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Geethaa73/feature-management-system.git
+cd feature-management-system
+```
+
+### 2. Create and Activate a Python Virtual Environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install Backend Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure PostgreSQL
+
+Create a PostgreSQL database:
+
+```sql
+CREATE DATABASE feature_management_db;
+```
+
+Create a `.env` file in the project root:
+
+```env
+DATABASE_URL=postgresql://YOUR_USERNAME:YOUR_PASSWORD@localhost:5432/feature_management_db
+```
+
+Replace the username and password with your PostgreSQL credentials.
+
+**Important:** Never commit `.env` files or database credentials to GitHub.
+
+### 5. Run Database Migrations
+
+From the project root:
+
+```bash
+alembic upgrade head
+```
+
+### 6. Start the Backend Server
+
+```bash
+python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Backend URL:
+
+```text
+http://127.0.0.1:8000
+```
+
+Interactive API documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+### 7. Install Frontend Dependencies
+
+Open another terminal:
+
+```bash
+cd feature-management-system/frontend
+npm install
+```
+
+### 8. Start the Frontend
+
+```bash
+npm run dev
+```
+
+Open the local frontend URL displayed by Vite in your browser.
+
+## API Overview
+
+The backend provides REST API modules for:
+
+| API Module | Description |
+|---|---|
+| Authentication | User registration and login |
+| Environments | Environment management |
+| Feature Flags | Feature creation and management |
+| Overrides | Feature override management |
+| Groups | User group management |
+| User Groups | Group membership management |
+| Evaluation | Feature evaluation |
+| User Overrides | User-specific overrides |
+| Users | User management |
+| Audit Logs | Activity tracking |
+| Targeting Rules | Conditional feature targeting |
+| Releases | Release lifecycle management |
+| Analytics | Application analytics |
+
+All application routers are registered under the `/api` prefix.
+
+## Security
+
+- JWT-based authentication.
+- Password hashing.
+- Role-based authorization.
+- Protected API endpoints.
+- Environment-based database configuration.
+- Git exclusion of environment and secret files.
+
+## Future Enhancements
+
+- Real-time feature evaluation monitoring.
+- Advanced analytics and reporting.
+- Automated release notifications.
+- Integration with CI/CD pipelines.
+- Additional SDK language support.
+- Enhanced targeting and experimentation capabilities.
+
+## Project Objective
+
+The primary objective of FeatureOps is to simplify application feature management by providing centralized feature flags, controlled rollouts, environment-based configuration, and release monitoring.
+
+The system aims to reduce deployment risks, improve release flexibility, and help development teams deliver application features more efficiently.
+
+---
+
+**Project:** FeatureOps – Application Feature Management and Release Control System
+
+**Repository:** [GitHub – Feature Management System](https://github.com/Geethaa73/feature-management-system)
+
+**Developed as part of:** Infosys Visual Internship
