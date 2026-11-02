@@ -2,6 +2,14 @@ from sqlalchemy import Column, Integer, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 
 from app.database.base import Base
+from datetime import datetime
+from sqlalchemy import DateTime
+
+
+created_at = Column(
+    DateTime,
+    default=datetime.utcnow
+)
 
 
 class EnvironmentOverride(Base):

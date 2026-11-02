@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: feature-flag-sdk
+Version: 0.1.0
+Summary: Python SDK for FeatureOps feature flag evaluation
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.31.0
+Provides-Extra: django
+Requires-Dist: Django>=4.2; extra == "django"
+Provides-Extra: fastapi
+Requires-Dist: fastapi>=0.100.0; extra == "fastapi"

@@ -1,19 +1,21 @@
 from pydantic import BaseModel
-from datetime import datetime
 
 
 class OverrideCreate(BaseModel):
-    feature_flag_id: int
+    flag_id: int
     environment_id: int
-    is_enabled: bool
+    value: bool
+
+
+class OverrideUpdate(BaseModel):
+    value: bool
 
 
 class OverrideResponse(BaseModel):
     id: int
-    feature_flag_id: int
+    flag_id: int
     environment_id: int
-    is_enabled: bool
-    created_at: datetime
+    value: bool
 
     class Config:
         from_attributes = True

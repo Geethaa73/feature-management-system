@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "feature-flag-sdk"
+version = "0.1.0"
+description = "Python SDK for FeatureOps feature flag evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "requests>=2.31.0",
+]
+
+
+[project.optional-dependencies]
+django = [
+    "Django>=4.2",
+]
+
+fastapi = [
+    "fastapi>=0.100.0",
+]
+
+
+[tool.setuptools]
+packages = ["feature_flag_sdk"]

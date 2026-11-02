@@ -1,46 +1,71 @@
-from datetime import datetime, timedelta
+import os
+from datetime import datetime, timedelta, timezone
+
 from jose import jwt
 from passlib.context import CryptContext
 
-# Secret Key (Change this before production)
-SECRET_KEY = "feature_management_secret_key"
+
+SECRET_KEY = os.getenv(
+    "SECRET_KEY",
+    "feature_management_secret_key_change_this"
+)
+
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-# Password Hashing
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# 7 days
+ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7
 
 
-def hash_password(password: str):
-    """
-    Hash a plain text password.
-    """
+FEATURE_FLAG_API_KEY = os.getenv(
+    "FEATURE_FLAG_API_KEY",
+    ""
+)
+
+
+pwd_context = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto"
+)
+
+
+def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
 
-def verify_password(plain_password: str, hashed_password: str):
-    """
-    Verify a plain password against a hashed password.
-    """
-    return pwd_context.verify(plain_password, hashed_password)
+def verify_password(
+    plain_password: str,
+    hashed_password: str
+) -> bool:
+    return pwd_context.verify(
+        plain_password,
+        hashed_password
+    )
 
 
-def create_access_token(data: dict):
-    """
-    Create a JWT access token.
-    """
+def create_access_token(data: dict) -> str:
+
     to_encode = data.copy()
 
-    expire = datetime.utcnow() + timedelta(
+    expire = datetime.now(timezone.utc) + timedelta(
         minutes=ACCESS_TOKEN_EXPIRE_MINUTES
     )
 
-    to_encode.update({"exp": expire})
+    to_encode.update({
+        "exp": expire
+    })
 
-    encoded_jwt = jwt.encode(
+    return jwt.encode(
         to_encode,
         SECRET_KEY,
         algorithm=ALGORITHM
     )
 
-    return encoded_jwt
+
+def verify_feature_api_key(api_key: str) -> bool:
+    """
+    Verify the API key used by external SDK clients.
+    """
+    if not FEATURE_FLAG_API_KEY:
+        return False
+
+    return api_key == FEATURE_FLAG_API_KEY

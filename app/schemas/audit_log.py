@@ -1,14 +1,20 @@
-from pydantic import BaseModel
 from datetime import datetime
+
+from pydantic import BaseModel
 
 
 class AuditLogResponse(BaseModel):
     id: int
     action: str
-    entity: str
-    entity_id: int
-    user_id: int
-    created_at: datetime
+    performed_by: str
+
+    flag_id: int | None = None
+    environment_id: int | None = None
+
+    old_value: str | None = None
+    new_value: str | None = None
+
+    timestamp: datetime
 
     class Config:
         from_attributes = True

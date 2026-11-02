@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.sql import func
 
 from app.database.base import Base
@@ -12,10 +12,23 @@ class AuditLog(Base):
     action = Column(String(100), nullable=False)
     performed_by = Column(String(100), nullable=False)
 
-    old_value = Column(String)
-    new_value = Column(String)
+    flag_id = Column(
+        Integer,
+        ForeignKey("feature_flags.id", ondelete="SET NULL"),
+        nullable=True,
+    )
+
+    environment_id = Column(
+        Integer,
+        ForeignKey("environments.id", ondelete="SET NULL"),
+        nullable=True,
+    )
+
+    old_value = Column(String, nullable=True)
+    new_value = Column(String, nullable=True)
 
     timestamp = Column(
         DateTime(timezone=True),
-        server_default=func.now()
+        server_default=func.now(),
+        nullable=True,
     )

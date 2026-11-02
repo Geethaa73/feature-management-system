@@ -1,0 +1,971 @@
+/* =========================================================
+   FEATUREOPS SIGNUP PAGE
+   Existing Teal / Blue Theme
+   ZERO PURPLE
+   ========================================================= */
+
+.featureops-signup-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   LEFT BRANDING
+   ========================================================= */
+
+.featureops-signup-brand {
+  position: relative;
+
+  width: 48%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 64px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(20, 184, 166, 0.22),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(37, 99, 235, 0.20),
+      transparent 36%
+    ),
+    linear-gradient(
+      145deg,
+      #0f172a 0%,
+      #10243d 55%,
+      #123b58 100%
+    );
+
+  color: #ffffff;
+}
+
+
+.featureops-signup-brand::before {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  right: -170px;
+  top: -170px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(20, 184, 166, 0.18);
+}
+
+
+.featureops-signup-brand::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: -300px;
+  bottom: -300px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(37, 99, 235, 0.16);
+}
+
+
+/* =========================================================
+   BRAND CONTENT
+   ========================================================= */
+
+.featureops-signup-brand-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 560px;
+
+  margin: auto 0;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.featureops-signup-brand-logo {
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(10px);
+}
+
+
+.featureops-signup-brand-logo img {
+  width: 62px;
+  height: 62px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   BRAND TITLE
+   ========================================================= */
+
+.featureops-signup-brand-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 46px;
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+
+.featureops-signup-brand-content h1 span {
+  color: #14b8a6;
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.featureops-signup-brand-subtitle {
+  margin: 14px 0 0;
+
+  color: #cbd5e1;
+
+  font-size: 18px;
+  line-height: 1.6;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   ACCENT LINE
+   ========================================================= */
+
+.featureops-signup-brand-line {
+  width: 76px;
+  height: 4px;
+
+  margin: 28px 0;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #14b8a6,
+      #2563eb
+    );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.featureops-signup-brand-description {
+  max-width: 500px;
+
+  margin: 0 0 36px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.featureops-signup-features {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+.featureops-signup-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.featureops-signup-feature-icon {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(20, 184, 166, 0.13);
+
+  color: #5eead4;
+
+  font-size: 21px;
+
+  border:
+    1px solid rgba(20, 184, 166, 0.12);
+}
+
+
+.featureops-signup-feature div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.featureops-signup-feature strong {
+  color: #f8fafc;
+
+  font-size: 14px;
+
+  font-weight: 650;
+}
+
+
+.featureops-signup-feature span {
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   BRAND FOOTER
+   ========================================================= */
+
+.featureops-signup-brand-footer {
+  position: relative;
+  z-index: 2;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RIGHT FORM SECTION
+   ========================================================= */
+
+.featureops-signup-form-section {
+  width: 52%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 48px;
+
+  background: #f8fafc;
+}
+
+
+.featureops-signup-card {
+  width: 100%;
+  max-width: 480px;
+}
+
+
+/* =========================================================
+   MOBILE BRAND
+   ========================================================= */
+
+.featureops-mobile-signup-brand {
+  display: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.featureops-signup-header {
+  margin-bottom: 28px;
+}
+
+
+.featureops-signup-header h2 {
+  margin: 0 0 8px;
+
+  color: #0f172a;
+
+  font-size: 30px;
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+}
+
+
+.featureops-signup-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.featureops-signup-form-group {
+  margin-bottom: 17px;
+}
+
+
+.featureops-signup-form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+
+.featureops-signup-form-group input,
+.featureops-signup-form-group select {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 14px;
+
+  border:
+    1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.featureops-signup-form-group input::placeholder {
+  color: #94a3b8;
+}
+
+
+.featureops-signup-form-group input:focus,
+.featureops-signup-form-group select:focus {
+  border-color: #14b8a6;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(20, 184, 166, 0.12);
+}
+
+
+.featureops-signup-form-group input:disabled,
+.featureops-signup-form-group select:disabled {
+  background: #f1f5f9;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PASSWORD WRAPPER
+   ========================================================= */
+
+.featureops-signup-password-wrapper {
+  position: relative;
+}
+
+
+.featureops-signup-password-wrapper input {
+  padding-right: 48px;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+   ========================================================= */
+
+.featureops-signup-password-toggle {
+  position: absolute;
+
+  right: 7px;
+  top: 50%;
+
+  width: 36px;
+  height: 36px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.featureops-signup-password-toggle:hover {
+  background: #ecfdf9;
+
+  color: #0d9488;
+}
+
+
+.featureops-signup-password-toggle svg {
+  font-size: 20px;
+}
+
+
+.featureops-signup-password-toggle:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   PASSWORD HINT
+   ========================================================= */
+
+.featureops-password-hint {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   PASSWORD MATCH
+   ========================================================= */
+
+.featureops-password-match,
+.featureops-password-error {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.featureops-password-match {
+  color: #16a34a;
+}
+
+
+.featureops-password-error {
+  color: #ef4444;
+}
+
+
+/* =========================================================
+   ROLE
+   ========================================================= */
+
+.featureops-role-group {
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT BUTTON
+   ========================================================= */
+
+.featureops-create-account-button {
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: #14b8a6;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.featureops-create-account-button:hover:not(:disabled) {
+  background: #0d9488;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(20, 184, 166, 0.22);
+}
+
+
+.featureops-create-account-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+.featureops-create-account-button:disabled {
+  opacity: 0.75;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.featureops-signup-spinner {
+  width: 16px;
+  height: 16px;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation:
+    featureops-signup-spin
+    0.7s linear infinite;
+}
+
+
+@keyframes featureops-signup-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   SIGN IN LINK
+   ========================================================= */
+
+.featureops-signin-link {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 22px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+.featureops-signin-link button {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.featureops-signin-link button:hover {
+  color: #1d4ed8;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.featureops-signup-security-note {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 25px;
+
+  padding: 10px 14px;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+.featureops-signup-security-note svg {
+  color: #14b8a6;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.featureops-signup-footer {
+  margin: 20px 0 0;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] .featureops-signup-page {
+  background: #0f172a;
+}
+
+
+[data-theme="dark"] .featureops-signup-form-section {
+  background: #0f172a;
+}
+
+
+[data-theme="dark"] .featureops-signup-header h2 {
+  color: #f8fafc;
+}
+
+
+[data-theme="dark"] .featureops-signup-header p {
+  color: #94a3b8;
+}
+
+
+[data-theme="dark"] .featureops-signup-form-group label {
+  color: #cbd5e1;
+}
+
+
+[data-theme="dark"] .featureops-signup-form-group input,
+[data-theme="dark"] .featureops-signup-form-group select {
+  background: #111c32;
+
+  border-color: #334155;
+
+  color: #f8fafc;
+}
+
+
+[data-theme="dark"] .featureops-signup-form-group input::placeholder {
+  color: #64748b;
+}
+
+
+[data-theme="dark"] .featureops-signup-form-group input:focus,
+[data-theme="dark"] .featureops-signup-form-group select:focus {
+  border-color: #14b8a6;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(20, 184, 166, 0.16);
+}
+
+
+[data-theme="dark"] .featureops-signup-form-group input:disabled,
+[data-theme="dark"] .featureops-signup-form-group select:disabled {
+  background: #1e293b;
+}
+
+
+[data-theme="dark"] .featureops-signup-password-toggle {
+  color: #94a3b8;
+}
+
+
+[data-theme="dark"] .featureops-signup-password-toggle:hover {
+  background: rgba(20, 184, 166, 0.10);
+
+  color: #5eead4;
+}
+
+
+[data-theme="dark"] .featureops-signin-link {
+  color: #94a3b8;
+}
+
+
+[data-theme="dark"] .featureops-signin-link button {
+  color: #60a5fa;
+}
+
+
+[data-theme="dark"] .featureops-signin-link button:hover {
+  color: #93c5fd;
+}
+
+
+[data-theme="dark"] .featureops-signup-security-note {
+  background: #111c32;
+
+  border-color: #263449;
+
+  color: #94a3b8;
+}
+
+
+[data-theme="dark"] .featureops-signup-security-note svg {
+  color: #5eead4;
+}
+
+
+[data-theme="dark"] .featureops-signup-footer {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .featureops-signup-brand {
+    width: 44%;
+
+    padding: 42px;
+  }
+
+  .featureops-signup-form-section {
+    width: 56%;
+
+    padding: 36px;
+  }
+
+  .featureops-signup-brand-content h1 {
+    font-size: 38px;
+  }
+
+  .featureops-signup-brand-description {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 760px) {
+
+  .featureops-signup-page {
+    display: block;
+  }
+
+  .featureops-signup-brand {
+    display: none;
+  }
+
+  .featureops-signup-form-section {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 28px 20px;
+  }
+
+  .featureops-signup-card {
+    max-width: 440px;
+  }
+
+
+  /* Mobile FeatureOps branding */
+
+  .featureops-mobile-signup-brand {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 34px;
+  }
+
+
+  .featureops-mobile-signup-brand img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+  }
+
+
+  .featureops-mobile-signup-brand h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 24px;
+
+    font-weight: 800;
+  }
+
+
+  .featureops-mobile-signup-brand h2 span {
+    color: #14b8a6;
+  }
+
+
+  .featureops-mobile-signup-brand p {
+    margin: 2px 0 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+  }
+
+
+  [data-theme="dark"] .featureops-mobile-signup-brand h2 {
+    color: #f8fafc;
+  }
+
+
+  [data-theme="dark"] .featureops-mobile-signup-brand p {
+    color: #94a3b8;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .featureops-signup-form-section {
+    padding: 24px 16px;
+  }
+
+  .featureops-signup-header h2 {
+    font-size: 27px;
+  }
+
+  .featureops-signin-link {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+  .featureops-signup-security-note {
+    text-align: center;
+  }
+}

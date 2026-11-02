@@ -1,0 +1,89 @@
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.page-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.page-title h2{
+
+    margin:0;
+
+    font-weight:700;
+
+    color:#1E293B;
+
+}
+
+.page-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#14B8A6;
+
+    color:white;
+
+    font-size:24px;
+
+}
+
+.page-header p{
+
+    margin-top:8px;
+
+    color:#64748B;
+
+    margin-left:70px;
+
+}
+
+.header-btn{
+
+    background:#14B8A6;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.header-btn:hover{
+
+    background:#0D9488;
+
+    transform:translateY(-2px);
+
+}

@@ -2,10 +2,19 @@ from sqlalchemy.orm import Session
 
 from app.models.user import User
 from app.schemas.user import UserCreate
-from app.utils.security import hash_password, verify_password, create_access_token
+
+from app.utils.security import (
+    hash_password,
+    verify_password,
+    create_access_token
+)
 
 
-def create_user(db: Session, user: UserCreate):
+def create_user(
+    db: Session,
+    user: UserCreate
+):
+
     # Check existing email
     existing_user = (
         db.query(User)
@@ -26,12 +35,15 @@ def create_user(db: Session, user: UserCreate):
     if existing_username:
         return None
 
-    # Create new user
+    # Create user
     new_user = User(
         username=user.username,
         email=user.email,
-        hashed_password=hash_password(user.password),
-        role=user.role
+        hashed_password=hash_password(
+            user.password
+        ),
+        role=user.role,
+        is_active=True
     )
 
     db.add(new_user)
@@ -46,6 +58,7 @@ def authenticate_user(
     email: str,
     password: str
 ):
+
     user = (
         db.query(User)
         .filter(User.email == email)
@@ -53,6 +66,9 @@ def authenticate_user(
     )
 
     if not user:
+        return None
+
+    if not user.is_active:
         return None
 
     if not verify_password(
@@ -67,9 +83,10 @@ def authenticate_user(
 def generate_token(user: User):
 
     token_data = {
-        "sub": str(user.id),
-        "email": user.email,
+        "sub": user.email,
         "role": user.role
     }
 
-    return create_access_token(token_data)
+    return create_access_token(
+        token_data
+    )
