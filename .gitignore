@@ -23,3 +23,9 @@ dist/
 # Testing
 .pytest_cache/
 .coverage
+
+# Environment and secret files
+.env
+.env.*
+**/.env
+**/.env.*
